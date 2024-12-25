@@ -55,3 +55,11 @@ app.get('/:username/:id', (req, res) => {
     res.send(htmlString);
 })
 
+app.get('/search', (req, res) => {
+    let { q } = req.query;
+    if (!q) {
+        res.send('<h1>Please provide a search query</h1>')
+    }
+    let htmlString = `<h1>Search results for ${q}</h1>`
+    res.send(htmlString);
+})
