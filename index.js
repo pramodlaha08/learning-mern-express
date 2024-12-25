@@ -36,3 +36,15 @@ app.get(`*`, (req, res) => {
     res.send('404 page not found');
 })
 
+
+app.post('/', (req, res) => {
+    res.send('you sent a post request to root path')
+})
+
+app.post('/about', (req, res) => {
+    res.send('you sent a post request to about path')
+})
+
+app.post('*', (req, res) => {
+    res.send('you sent a post request to but page not found')
+})
