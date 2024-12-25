@@ -21,30 +21,37 @@ app.listen(port, () => {
 // })
 
 
-app.get('/', (req, res) => {
-    res.send('you contacted root path');
+// app.get('/', (req, res) => {
+//     res.send('Hello i am root path');
+// })
+
+// app.get('/about', (req, res) => {
+//     res.send('you contacted about path');
+// })
+// app.get('/contact', (req, res) => {
+//     res.send('you contacted contact path');
+// })
+
+// app.get(`*`, (req, res) => {
+//     res.send('404 page not found');
+// })
+
+
+// app.post('/', (req, res) => {
+//     res.send('you sent a post request to root path')
+// })
+
+// app.post('/about', (req, res) => {
+//     res.send('you sent a post request to about path')
+// })
+
+// app.post('*', (req, res) => {
+//     res.send('you sent a post request to but page not found')
+// })
+
+app.get('/:username/:id', (req, res) => {
+    let { username, id } = req.params;
+    let htmlString = `<h1>Welcome @${username} with your id ${id}</h1>`
+    res.send(htmlString);
 })
 
-app.get('/about', (req, res) => {
-    res.send('you contacted about path');
-})
-app.get('/contact', (req, res) => {
-    res.send('you contacted contact path');
-})
-
-app.get(`*`, (req, res) => {
-    res.send('404 page not found');
-})
-
-
-app.post('/', (req, res) => {
-    res.send('you sent a post request to root path')
-})
-
-app.post('/about', (req, res) => {
-    res.send('you sent a post request to about path')
-})
-
-app.post('*', (req, res) => {
-    res.send('you sent a post request to but page not found')
-})
